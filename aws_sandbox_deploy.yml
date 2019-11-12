@@ -42,6 +42,10 @@
       debug:
         msg: "IP of new instance(s): {{ item.public_ip }}"
       loop: "{{ ec2.instances }}"
+      
+    - name: Debug
+      debug:
+        msg: "{{ vars | default('none') }}"
 
 - name: Ensure sample application is available
   hosts: launched
